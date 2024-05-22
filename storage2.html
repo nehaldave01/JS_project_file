@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clicknew()">Set Button</button>
+    <button onclick="click1()">Get Button</button>
+
+</body>
+
+<script>
+     let obj = {
+        name : 'Nehal',
+        course : 'MERN Stack',
+        age : 25, 
+        gender : 'F'
+     }
+
+     function clicknew(){
+        localStorage.setItem("obj", JSON.stringify(obj))
+
+      //   sessionStorage.setItem("obj", JSON.stringify(obj) )
+     }
+
+     function click1(){
+        let output = JSON.parse(localStorage.getItem("obj"))
+        console.log(output);
+        console.log(typeof output);
+     }
+</script>
+
+</html>

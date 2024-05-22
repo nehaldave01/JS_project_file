@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <form action=""> -->
+      <label for="">Name:</label>
+      <input type="text" id="input1" />
+      <label for="">Age</label>
+      <input type="number" id="input2" />
+      <label for="">Course Name</label>
+      <input type="text" id="input3" />
+      <input type="submit" onclick="myFunction()" />
+    <!-- </form> -->
+
+    <table id="maintab" style="width: 100%"></table>
+  </body>
+  <script>
+    let arr = [];
+
+
+    
+    function myFunction(e) {
+      let inp1 = document.getElementById("input1").value;
+      let inp2 = document.getElementById("input2").value;
+      let inp3 = document.getElementById("input3").value;
+     
+
+      // e.preventDefault()
+      let result = {
+        inp1: inp1,
+        inp2: inp2,
+        inp3: inp3,
+      };
+      arr.push(result);
+      //   console.log(result);
+    
+     let tab = " <tr> <th>Name</th> <th>Age</th>  <th>Course Name</th> </tr>";
+      arr.forEach((i) => {
+        tab += ` <tr> <td> ${i.inp1} </td> <td> ${i.inp2} </td>  <td> ${i.inp3} </td> </tr>`;
+      });
+      document.querySelector("#maintab").innerHTML = tab;
+     result={
+      inp1:"",
+      inp2:"",
+      inp3:"",
+     }
+    }
+  </script>
+</html>

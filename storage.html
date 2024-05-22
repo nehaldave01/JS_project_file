@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="click1()">Set Data</button>
+    <button onclick="click2()">Get Data</button>
+    <h1></h1>
+    <h2></h2>
+</body>
+
+<script>
+
+    let obj={
+        name:"abc",
+        age:20
+    }
+
+    let arr=[
+    {
+        name:"abc",
+        age:20
+    },
+    {
+        name:"xyz",
+        age:30
+    }
+
+    ]
+    function click1(){
+        // localStorage.setItem("obj",JSON.stringify(obj))
+        // sessionStorage.setItem("age",20)
+        localStorage.setItem("arr",JSON.stringify(arr))
+
+    }
+
+
+    function click2(){
+    //  let output = localStorage.getItem("name")
+    //  console.log(output);
+    //  document.querySelector("h1").innerHTML=output
+
+  let output= JSON.parse(localStorage.getItem("obj")) ||{}
+  console.log(output);
+  console.log(typeof output);
+  document.querySelector("h1").innerHTML=output.name
+  document.querySelector("h2").innerHTML=output.age
+
+
+// let output= JSON.parse(localStorage.getItem("arr")) ||[]
+//   console.log(output);
+//   console.log(typeof output);
+
+    }
+</script>
+</html>

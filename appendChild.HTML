@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendchild</title>
+    <style>
+
+       body{
+        margin-left: 120px;
+       }
+        h1, h2{
+           color: blue;
+           font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>WEB DEVELOPMENT</h1>
+    <h2>Course</h2>
+
+    <ul id="listA">
+        <li>Full Stack</li>
+        <li>MERN Stack</li>
+    </ul>
+
+    <button onclick="click1()">Submit</button>
+</body>
+
+<script>
+     function click1(){
+        let elm = document.createElement('li');
+        let elmText = document.createTextNode("MEAN Stack");
+        
+        elm.appendChild(elmText);
+        document.getElementById("listA").appendChild(elm);
+     }
+</script>
+</html>
